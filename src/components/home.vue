@@ -1,15 +1,16 @@
 <template>
 	<el-container>
 		<el-header>
+			<headerxc style="margin-bottom: 50px;"></headerxc>
 			<div style="width: 500px;margin: auto;">
 				<el-input placeholder="搜索菜品">
 					<el-button slot="append" icon="el-icon-search"></el-button>
 				</el-input>
 			</div>
 		</el-header>
-		<el-container>
+		<el-container style="margin-top: 100px;">
 			<el-aside width="110px" style="margin-top: 260px;margin-left: 100px;">
-				<el-tabs v-model="cateCurrent" @tab-click="dx()" :tab-position="tabPosition" style="height: 600px;">
+				<el-tabs v-model="cateCurrent" :tab-position="tabPosition" style="height: 600px;">
 					<el-tab-pane v-for="(item,i) in categoryList" :key="i" :index="item.name" :label="item.name">
 					</el-tab-pane>
 				</el-tabs>
@@ -42,8 +43,12 @@
 </template>
 
 <script>
+	import headerxc from '@/components/headerxc.vue'
 	export default {
 		name: 'home',
+		components: {
+			headerxc
+		},
 		data() {
 			return {
 
@@ -65,21 +70,13 @@
 				]
 			}
 		},
-		created() {},
+		created() {
+		},
 		mounted: function() {
 
 		},
 		methods: {
-			dx() {
-				console.log(this.cateCurrent);
-			},
-			test() {
-				var url = "/secondhand/forehome";
-				this.$axios.get(url).then(res => {
-					this.articles = res.data.page.content;
-					console.log(res.data)
-				})
-			}
+
 		}
 	}
 </script>

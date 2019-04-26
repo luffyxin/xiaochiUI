@@ -5,15 +5,21 @@ import login from '@/components/login'
 import center from '@/components/center'
 import personinfo from '@/components/personinfo'
 import myorder from '@/components/myorder'
+import register from '@/components/register'
+import product from '@/components/product'
+import order from '@/components/order'
+import category from '@/components/category'
+import ad from '@/components/ad'
+import storemanage from '@/components/storemanage'
+import notice from '@/components/notice'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: home
-    },
+	routes: [{
+			path: '/',
+			name: 'home',
+			component: home
+		},
 		{
 			path: '/login',
 			name: 'login',
@@ -22,17 +28,45 @@ export default new Router({
 		{
 			path: '/center',
 			component: center,
-			children: [
-        {
-          path: 'personinfo',
-          component: personinfo
-        },
+			children: [{
+					path: 'personinfo',
+					component: personinfo
+				},
 				{
-				  path: 'myorder',
-				  component: myorder
+					path: 'myorder',
+					component: myorder
 				}
-      ]
-			
+			]
+
+		},
+		{
+			path: '/register',
+			component: register
+		}, {
+			path: '/storemanage',
+			component: storemanage,
+			children: [{
+					path: 'product',
+					component: product
+				},
+				{
+					path: 'order',
+					component: order
+				},
+				{
+					path: 'category',
+					component: category
+				},
+				{
+					path: 'ad',
+					component: ad
+				},
+				{
+					path: 'notice',
+					component: notice
+				}
+			]
+
 		}
-  ]
+	]
 })

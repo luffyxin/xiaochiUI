@@ -11,18 +11,11 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-		'/api':{
-			target:'https://www.csdn.net',
-			changeOrigin:true,
-			pathRewrite:{
-				'^/api':'/api'
-			}
-		},
-		'/secondhand':{
+		'/xiaochi':{
 			target:'http://localhost:8080',
 			changeOrigin:true,
 			pathRewrite:{
-				'^/secondhand':'/secondhand'
+				'^/xiaochi':'/xiaochi'
 			}
 		}
 		
@@ -32,7 +25,7 @@ module.exports = {
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8880, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-    autoOpenBrowser: false,
+    autoOpenBrowser: true,
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-

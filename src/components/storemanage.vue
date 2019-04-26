@@ -7,7 +7,7 @@
 			<el-aside width="200px">
 				<el-row class="tac">
 					<el-col>
-						<h5>个人中心</h5>
+						<h5>店铺管理</h5>
 
 						<el-menu :default-active="this.$router.path" router>
 							<el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name">
@@ -37,12 +37,21 @@
 		data() {
 			return {
 				navList: [{
-						name: '/center/personinfo',
-						navItem: '个人信息'
+						name: '/storemanage/product',
+						navItem: '商品管理'
 					},
 					{
-						name: '/center/myorder',
-						navItem: '我的订单'
+						name: '/storemanage/order',
+						navItem: '订单'
+					},{
+						name: '/storemanage/category',
+						navItem: '分类'
+					},{
+						name: '/storemanage/ad',
+						navItem: '轮播图'
+					},{
+						name: '/storemanage/notice',
+						navItem: '公告'
 					}
 				]
 			}
