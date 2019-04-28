@@ -43,6 +43,9 @@
 					{
 						name: '/center/myorder',
 						navItem: '我的订单'
+					},{
+						name: '/center/car',
+						navItem: '购物车'
 					}
 				]
 			}

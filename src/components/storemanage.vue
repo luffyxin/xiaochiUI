@@ -46,10 +46,13 @@
 					},{
 						name: '/storemanage/category',
 						navItem: '分类'
-					},{
-						name: '/storemanage/ad',
-						navItem: '轮播图'
-					},{
+					},
+					// {
+					// 	name: '/storemanage/ad',
+					// 	navItem: '轮播图'
+					// },
+					// 
+					{
 						name: '/storemanage/notice',
 						navItem: '公告'
 					}

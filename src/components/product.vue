@@ -205,6 +205,7 @@
 					var formData = new FormData();
 					formData.append("image", this.productimg);
 					this.$axios.post(url, formData).then(res => {
+						this.dialog=false;
 						if (res.data.result.code == '0') {
 							this.product.imagepath = res.data.imagepath;
 							this.postInfo();

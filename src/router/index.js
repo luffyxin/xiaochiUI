@@ -12,6 +12,8 @@ import category from '@/components/category'
 import ad from '@/components/ad'
 import storemanage from '@/components/storemanage'
 import notice from '@/components/notice'
+import car from '@/components/car'
+import pay from '@/components/pay'
 Vue.use(Router)
 
 export default new Router({
@@ -35,6 +37,13 @@ export default new Router({
 				{
 					path: 'myorder',
 					component: myorder
+				},{
+					path: 'car',
+					component:car
+				},
+				{
+					path: 'pay',
+					component: pay
 				}
 			]
 

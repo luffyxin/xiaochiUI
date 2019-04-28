@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<el-form ref="form" :model="form" label-width="80px" style="width: 600px;text-align:left; margin-left: 100px;">
+		<el-form ref="form" :rules="rules" :model="form" label-width="80px" style="width: 600px;text-align:left; margin-left: 100px;">
 
 			<el-form-item label="头像">
 				<el-row>
@@ -20,8 +20,8 @@
 			<el-form-item label="用户名">
 				<el-input v-model="form.username"></el-input>
 			</el-form-item>
-			<el-form-item label="电话">
-				<el-input-number :controls="false" type="tel" v-model="form.tel"></el-input-number>
+			<el-form-item label="电话" prop="tel">
+				<el-input :controls="false" type="tel" v-model="form.tel"></el-input>
 			</el-form-item>
 
 			<el-form-item label="密码">
@@ -41,6 +41,20 @@
 <script>
 	export default {
 		data() {
+			var checkPhone = (rule, value, callback) => {
+				if (!value) {
+					return callback(new Error('手机号不能为空'));
+				} else {
+					const reg = /^1[3|4|5|7|8][0-9]\d{8}$/
+					console.log(reg.test(value));
+					if (reg.test(value)) {
+						callback();
+					} else {
+						return callback(new Error('请输入正确的手机号'));
+					}
+				}
+			};
+
 			return {
 				form: {
 					id: null,
@@ -53,7 +67,10 @@
 				},
 				user: null,
 				profileimg: '',
-				profileimgFile: null
+				profileimgFile: null,
+				rules: {
+					tel: [{validator: checkPhone, trigger: 'blur'}]
+				}
 
 			}
 		},
@@ -109,12 +126,12 @@
 
 					})
 
-				}else{
+				} else {
 					this.postInfo();
 				}
 
 			},
-			postInfo(){
+			postInfo() {
 				var url = "/xiaochi/user/updateuserinfo/" + this.user.id;
 				this.form.id = this.user.id;
 				this.$axios.post(url, this.form).then(res => {
@@ -126,7 +143,7 @@
 						this.$message.error(res.data.result.message);
 					}
 				})
-				
+
 			},
 			getProImg(event) {
 				this.profileimgFile = event.target.files[0];
