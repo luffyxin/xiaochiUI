@@ -42,10 +42,10 @@
 
 			<el-form ref="form" :model="product" label-width="80px">
 				<el-form-item label="名称">
-					<el-input style="width: 300px;" v-model="product.name"></el-input>
+					<el-input style="width: 50%;" v-model="product.name"></el-input>
 				</el-form-item>
 				<el-form-item label="价格">
-					<el-input-number :precision="2" :controls="contro" style="width: 150px;" v-model="product.price"></el-input-number>
+					<el-input-number :precision="2" :controls="contro" style="width: 50%;" v-model="product.price"></el-input-number>
 				</el-form-item>
 
 				<el-form-item label="分类">
@@ -58,7 +58,7 @@
 					<el-input type="textarea" :rows="4" v-model="product.introduce"></el-input>
 				</el-form-item>
 				<el-form-item label="库存">
-					<el-input-number style="width: 150px;" type="number" v-model="product.stock"></el-input-number>
+					<el-input-number style="width: 50%;" type="number" v-model="product.stock"></el-input-number>
 				</el-form-item>
 
 				<el-form-item label="图片">

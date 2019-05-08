@@ -25,7 +25,7 @@
 				<el-row>
 					<el-col :span="4" v-for="(o,i) in goodslist" :key="i" :offset="1">
 						<el-card :body-style="{ padding: '0px' }" style="margin-top: 10px;">
-							<img :src="o.imagepath" style="width:270px;height:270px" class="image">
+							<img :src="o.imagepath" style="width:300px;height: 200px;" class="image">
 							<div style="padding: 14px;">
 								<span>{{o.name}} </span><span style="color: red;">{{o.price}}￥</span>
 								<div class="bottom clearfix">

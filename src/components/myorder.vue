@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<el-card class="box-card" v-for="o in orderList" style="width: 1100px;margin-bottom: 10px;">
+		<el-card class="box-card" v-for="o in orderList" :key="o.name" style="width: 1100px;margin-bottom: 10px;">
 			<div slot="header" class="clearfix">
 				<span style="float: left;">订单编号：<span style="color: coral;">{{o.orderid}}</span></span>
 				<span>时间：<span style="color: green;">{{o.addtime}}</span></span>

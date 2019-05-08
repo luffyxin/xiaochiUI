@@ -14,6 +14,10 @@ import storemanage from '@/components/storemanage'
 import notice from '@/components/notice'
 import car from '@/components/car'
 import pay from '@/components/pay'
+import admin from '@/components/admin'
+import member from '@/components/member'
+import storemember from '@/components/storemember'
+import foodinfo from '@/components/foodinfo'
 Vue.use(Router)
 
 export default new Router({
@@ -26,6 +30,11 @@ export default new Router({
 			path: '/login',
 			name: 'login',
 			component: login
+		},
+		{
+			path: '/foodinfo',
+			name: 'foodinfo',
+			component : foodinfo
 		},
 		{
 			path: '/center',
@@ -76,6 +85,21 @@ export default new Router({
 				}
 			]
 
+		},
+		{
+			path: '/admin',
+			component: admin,
+			children: [{
+					path: 'member',
+					component: member
+				},
+				{
+					path: 'storemember',
+					component: storemember
+				},
+			
+			]
+		
 		}
 	]
 })
